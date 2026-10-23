@@ -46,6 +46,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Récupérer le code
+        uses: actions/checkout@v7
+
+      - name: Récupérer l'image
         uses: actions/download-artifact@v8
         with :
           name: image
