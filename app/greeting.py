@@ -9,4 +9,4 @@ def greet(name: str) -> str:
     cleaned = name.strip()
     if not cleaned:
         return "Bonjour !"
-    return f"Bonjourslt {cleaned} !"
+    return f"Salut {cleaned} !"
