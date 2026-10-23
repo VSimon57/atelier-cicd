@@ -49,9 +49,11 @@ jobs:
         uses: actions/download-artifact@v8
         with :
           name: image
-          path: out/image.tar
+          path: out
+
       - name: Lance sbom.sh
         run: bash ci/sbom.sh
+
       - name: Téléverser le SBOM
         uses: actions/upload-artifact@v4
         with:
@@ -62,8 +64,10 @@ jobs:
             out/sbom.spdx.json
             out/sbom.txt
           retention-days: 30
+
       - name: Lance scan sh
         run: bash ci/scan.sh
+
       - name: Téléverser l'artefact Vulnerability
         if: always()
         uses: actions/upload-artifact@v4
